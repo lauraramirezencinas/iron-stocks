@@ -31,5 +31,4 @@ router.post("/search-company", (req, res) => {
 })
 
 
-
 module.exports = router;

@@ -19,8 +19,6 @@ document.addEventListener('DOMContentLoaded', () => {
 }, false);
 
 
-
-
 function printTheChart(stockData) {
   const dailyData = stockData['Time Series (Daily)'];
   const stockDates = Object.keys(dailyData);
