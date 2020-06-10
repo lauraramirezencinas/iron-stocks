@@ -1,9 +1,11 @@
-<h1>User profile</h1><
+<h1>User profile</h1>
 
 {{#if user}}
   <h2>Welcome, {{ user.username }}!</h2>
-  <p>This is your profile page my friend!</p>
- 
 {{else}}
   <p>Still no logged in user, sorry!</p>
 {{/if}}
+
+<a class="navbar-brand" href="#">Mis acciones</a>
+<a href="/search-company">Añadir acciones</a>
+
