@@ -9,3 +9,7 @@
 <a class="navbar-brand" href="#">Mis acciones</a>
 <a href="/search-company">Añadir acciones</a>
 
+{{#each acciones}}
+<h5>{{this.name}}</h5>
+<a href="/show-company?symbol={{symbol}}">Show details</a>
+{{/each}}

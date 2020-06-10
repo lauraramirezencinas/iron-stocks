@@ -1,13 +1,20 @@
 const { Router } = require('express');
 const router = new Router
 const mongoose = require('mongoose');
-const User = require("../models/User.model")
+const User = require("../models/User.model");
+const Accion = require("../models/Accion.model");
 const bcrypt = require("bcryptjs");
 const saltRounds = 10;
 
 router.get('/signup', (req, res) => res.render('auth/signup'));
 
-router.get('/userProfile',(req,res) => res.render('user/user-profile', {user:req.session.currentUser}));
+router.get('/userProfile',(req,res) => {
+  Accion.find({userId:req.session.currentUser})
+  .then(acciones=>{
+    res.render('user/user-profile', {user:req.session.currentUser, acciones:acciones})
+  })
+  .catch(e=>e)
+});
 
 router.post('/signup', (req, res, next) => {
   //console.log(req.body)

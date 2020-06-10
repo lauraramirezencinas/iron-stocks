@@ -14,7 +14,9 @@
 <a href="/show-company?symbol={{symbol}}">Show details</a>
 
 <form action="/accion" method="post">
-
+<input type="hidden" value="{{this.name}}" name="name">
+<input type="hidden" value="{{this.symbol}}" name="symbol">
+<input type= "submit" value="Guardar">
 </form>
 
 

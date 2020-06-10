@@ -65,4 +65,7 @@ app.use('/', showCompany);
 const authRoutes= require('./routes/auth.routes')
 app.use('/', authRoutes);
 
+const accion= require('./routes/accion')
+app.use('/', accion);
+
 module.exports = app;
