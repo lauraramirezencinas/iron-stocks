@@ -23,6 +23,8 @@ const app_name = require('./package.json').name;
 const debug = require('debug')(`${app_name}:${path.basename(__filename).split('.')[0]}`);
 
 const app = express();
+const createSession=require('./configs/session.config');
+createSession(app);
 
 // Middleware Setup
 app.use(logger('dev'));
@@ -55,9 +57,12 @@ const index = require('./routes/index');
 app.use('/', index);
 
 const searchCompany = require('./routes/search-company');
-app.use('/', searchCompany)
+app.use('/', searchCompany);
 
 const showCompany = require('./routes/show-company');
-app.use('/', showCompany)
+app.use('/', showCompany);
+
+const authRoutes= require('./routes/auth.routes')
+app.use('/', authRoutes);
 
 module.exports = app;
